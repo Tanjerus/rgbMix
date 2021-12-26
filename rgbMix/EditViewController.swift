@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EditViewController: UIViewController {
     @IBOutlet var rgbView: UIView!
     
     @IBOutlet var redLabel: UILabel!
@@ -18,11 +18,19 @@ class ViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
+    @IBOutlet var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         rgbView.layer.cornerRadius = 20
-        rgbView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1)
+        rgbView.backgroundColor = UIColor(
+            red: 0.5,
+            green: 0.5,
+            blue: 0.5,
+            alpha: 1
+        )
+        redSlider.minimumTrackTintColor = .red
+        greenSlider.minimumTrackTintColor = .green
         }
     
     @IBAction func sliderAction() {
@@ -35,6 +43,8 @@ class ViewController: UIViewController {
         redLabel.text = String(redValue)
         greenLabel.text = String(greenValue)
         blueLabel.text = String(blueValue)
+    }
+    @IBAction func doneButtonAction(_ sender: UIButton) {
     }
     
 }
